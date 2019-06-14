@@ -1,11 +1,13 @@
 const jobModel = require("./jobs/jobs.model");
-const getWebsiteContent = require("./crawler/scraper");
+const Scraper = require("./crawler/scraper");
 const mongoose = require("mongoose");
 
 const URL = "https://wuzzuf.net/search/jobs";
 
 const insertContentInDataBase = () => {
-  getWebsiteContent(URL)
+  const scraper = new Scraper();
+  scraper
+    .getWebsiteContent(URL)
     .then(reJobs => {
       mongoose.connection.db.dropCollection("jobs");
       console.log("returnedJobs length", reJobs.length);
