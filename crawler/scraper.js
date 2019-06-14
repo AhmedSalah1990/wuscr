@@ -8,7 +8,7 @@ class Scraper {
     this.parsedJobs = [];
     this.pageLimit = 10;
     this.pageCounter = 0;
-    this.resultCount = 1;
+    this.resultCount = 50;
     this.jobsCounter = 0;
     this.nextPageLink;
     console.log(
@@ -39,10 +39,10 @@ class Scraper {
     $(".container .main-content-container .card-has-jobs .result-wrp").map(
       (i, el) => {
         const count = this.resultCount++;
-        this.pageLimit =
-          $(el)
-            .find(".search-jobs-count")
-            .text() / 20;
+        // this.pageLimit =
+        //   $(el)
+        //     .find(".search-jobs-count")
+        //     .text() / 20;
         const title = $(el)
           .find("h2.job-title")
           .text()
