@@ -39,7 +39,7 @@ class Scraper {
     $(".container .main-content-container .card-has-jobs .result-wrp").map(
       (i, el) => {
         const count = this.resultCount++;
-        pageLimit =
+        this.pageLimit =
           $(el)
             .find(".search-jobs-count")
             .text() / 20;
