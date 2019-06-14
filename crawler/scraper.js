@@ -6,9 +6,9 @@ class Scraper {
   constructor() {
     this.URL = "https://wuzzuf.net/search/jobs";
     this.parsedJobs = [];
-    this.pageLimit = 10;
+    this.pageLimit = 50;
     this.pageCounter = 0;
-    this.resultCount = 50;
+    this.resultCount = 1;
     this.jobsCounter = 0;
     this.nextPageLink;
     console.log(
